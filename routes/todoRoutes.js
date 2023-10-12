@@ -1,7 +1,11 @@
 const router = require("express").Router();
+const Todo = require("../models/Todo");
 
 router.get("/", (req, res) => {
-    console.log("You are in the index page");
+    Todo.find((err, result) => {
+        if (err) throw new Error(err);
+        console.log(result);
+    });
 });
 
 module.exports = router;
