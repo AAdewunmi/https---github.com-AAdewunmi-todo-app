@@ -2,8 +2,7 @@ const router = require("express").Router();
 const Todo = require("../models/Todo");
 
 router.get("/", (req, res) => {
-    Todo.find((err, result) => {
-        if (err) throw new Error(err);
+    Todo.find().then((result) => {
         console.log(result);
     });
 });
