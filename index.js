@@ -4,6 +4,7 @@ const PORT = 3030;
 const app = express();
 const todoRoutes = require("./routes/todoRoutes");
 
+app.use(express.json());
 
 mongoose.connect("mongodb://localhost/todolist")
     .then(() => console.log("Connected successfully!"))
