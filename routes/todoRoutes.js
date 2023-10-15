@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/new", (req, res) => {
+router.post("/", (req, res) => {
     /* Todo.create().then(req.body, (result) => {
       res.send({result});
       console.log(result);
@@ -22,12 +22,12 @@ router.post("/new", (req, res) => {
     });
 });
 
-router.delete("/remove", (req, res) => {
+router.delete("/:id", (req, res) => {
   /* Todo.create().then(req.body, (result) => {
       res.send({result});
       console.log(result);
     }); */
-  Todo.findOneAndRemove({_id: req.body.id}, (err, result) => {
+  Todo.findOneAndRemove({_id: req.params.id}, (err, result) => {
     if (err) throw new Error(err);
     console.log(result);
   });
