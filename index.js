@@ -6,7 +6,7 @@ const todoRoutes = require("./routes/todoRoutes");
 
 app.use(express.json());
 mongoose.set("strictQuery", true);
-//mongoose.connect("mongodb://localhost/todolist")
+
 mongoose.connect("mongodb://0.0.0.0/todolist")
     .then(() => console.log("Connected successfully!"))
     .catch((err) => console.error(err));
